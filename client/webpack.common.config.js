@@ -1,7 +1,6 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-// const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const ErrorOverlayPlugin = require('error-overlay-webpack-plugin');
 const ProgressPlugin = require('progress-webpack-plugin');
@@ -17,10 +16,16 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.js$/,
+                test: /\.(js|jsx)$/,
                 exclude: /node_modules/,
+                // loader: "babel-loader",
                 use: {
-                    loader: "babel-loader"
+                    loader: "babel-loader",
+                    options: {
+                        presets: [
+                            ['@babel/preset-env', { targets: "defaults" }]
+                        ]
+                    }
                 },
             },
             {
@@ -97,7 +102,6 @@ module.exports = {
         open: true,
     },
     optimization: {
-        // minimizer: [new UglifyJsPlugin()],
         runtimeChunk: {
 			name: "runtime",
 		},
