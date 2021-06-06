@@ -1,0 +1,91 @@
+.full-height {
+	height: 100%;
+}
+
+.full-width {
+	width: 100%;
+}
+
+.semibold {
+	font-weight: 600;
+}
+
+.ta-c {
+	text-align: center;
+}
+
+.ta-r {
+	text-align: right;
+}
+
+.ta-l {
+	text-align: left;
+}
+
+.bold {
+	font-weight: 700;
+}
+
+.text-uppercase {
+	text-transform: uppercase;
+}
+
+.breakpoint(@size, @rules, @mediafeature:max-width) {
+	@mediaQuery: ~"screen and (@{mediafeature}: @{size})";
+
+	@media @mediaQuery {
+		@rules();
+	}
+}
+
+.media-set(@prop, @forDesktop, @forMobile) {
+	@{prop}: @forDesktop;
+	.breakpoint(@mobile, {
+        @{prop}: @forMobile;
+    });
+}
+
+.d-flex {
+	display: flex;
+	&--wrap {
+		flex-wrap: wrap;
+	}
+	&--column {
+		flex-direction: column;
+	}
+	&--full-width {
+		width: 100%;
+	}
+	&--aligned {
+		justify-content: space-between;
+		align-items: center;
+		&-start {
+			align-items: flex-start;
+		}
+		&-end {
+			align-items: flex-end;
+		}
+	}
+	&--centered {
+		align-items: center;
+		justify-content: center;
+		&-vertically {
+			align-items: center;
+		}
+		&-horizontally {
+			justify-content: center;
+		}
+		&-ended {
+			align-items: flex-end;
+		}
+	}
+	&--reversed {
+		flex-direction: row-reverse;
+	}
+	&--ended {
+		justify-content: flex-end;
+	}
+	&--space-between {
+		justify-content: space-between;
+	}
+}
