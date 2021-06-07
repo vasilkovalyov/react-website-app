@@ -6,7 +6,7 @@ import {
     Switch
 } from "react-router-dom";
 // pages
-import { Home, About, Portfolio, Blog, Contact } from './views/public/index'
+import { Home, About, Portfolio, Blog, Contact } from './views/main/main'
 // layouts
 import MainLayout from './components/layouts/MainLayout.jsx'
 import AppRoute from './views/AppRoute.jsx'
@@ -18,10 +18,10 @@ const App = () => {
                 <div className="app">
                     <Switch>
                         <AppRoute exact path="/" component={Home} layout={MainLayout} />
-                        <AppRoute exact path="/about" component={About} layout={MainLayout} />
-                        <AppRoute exact path="/portfolio" component={Portfolio} layout={MainLayout} />
-                        <AppRoute exact path="/blog" component={Blog} layout={MainLayout} />
-                        <AppRoute exact path="/contact" component={Contact} layout={MainLayout} />
+                        <AppRoute path="/about" component={About} layout={MainLayout} />
+                        <AppRoute path="/portfolio" component={Portfolio} layout={MainLayout} />
+                        <AppRoute path="/blog" component={Blog} layout={MainLayout} />
+                        <AppRoute path="/contact" component={Contact} layout={MainLayout} />
                     </Switch>
                 </div>
             </Router>
