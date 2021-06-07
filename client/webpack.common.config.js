@@ -1,7 +1,9 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const {
+    CleanWebpackPlugin
+} = require("clean-webpack-plugin");
 const ErrorOverlayPlugin = require('error-overlay-webpack-plugin');
 const ProgressPlugin = require('progress-webpack-plugin');
 
@@ -14,8 +16,7 @@ module.exports = {
         path: path.resolve(__dirname, BuildFolder),
     },
     module: {
-        rules: [
-            {
+        rules: [{
                 test: /\.(js|jsx)$/,
                 exclude: /node_modules/,
                 // loader: "babel-loader",
@@ -23,7 +24,9 @@ module.exports = {
                     loader: "babel-loader",
                     options: {
                         presets: [
-                            ['@babel/preset-env', { targets: "defaults" }]
+                            ['@babel/preset-env', {
+                                targets: "defaults"
+                            }]
                         ]
                     }
                 },
@@ -34,8 +37,7 @@ module.exports = {
             },
             {
                 test: /\.less$/i,
-                use: [
-                    {
+                use: [{
                         loader: MiniCssExtractPlugin.loader,
                         options: {
                             publicPath: `/${BuildFolder}/`,
@@ -58,8 +60,8 @@ module.exports = {
                         options: {
                             sourceMap: true,
                             lessOptions: {
-								javascriptEnabled: true,
-							},
+                                javascriptEnabled: true,
+                            },
                         },
                     },
                 ],
@@ -68,19 +70,19 @@ module.exports = {
                 test: /\.(png|jpe?g|gif)$/i,
                 loader: "file-loader",
                 options: {
-					name: '[name].[ext]',
+                    name: '[name].[ext]',
                     outputPath: 'images/'
-				},
+                },
             },
             {
-				test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
-				loader: "file-loader",
-				options: {
+                test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+                loader: "file-loader",
+                options: {
                     name: '../fonts/[name].[ext]',
                     publicPath: `./${BuildFolder}/`,
-					outputPath: 'fonts/'
-				},
-			},
+                    outputPath: 'fonts/'
+                },
+            },
         ]
     },
     plugins: [
@@ -100,20 +102,21 @@ module.exports = {
         host: 'localhost',
         port: 8080,
         open: true,
+        historyApiFallback: true,
     },
     optimization: {
         runtimeChunk: {
-			name: "runtime",
-		},
-		splitChunks: {
-			cacheGroups: {
-				commons: {
-					test: /[\\/]node_modules[\\/](react|react-dom)[\\/]/,
-					name: "vendor",
-					chunks: "all",
-				},
-			},
-		},
+            name: "runtime",
+        },
+        splitChunks: {
+            cacheGroups: {
+                commons: {
+                    test: /[\\/]node_modules[\\/](react|react-dom)[\\/]/,
+                    name: "vendor",
+                    chunks: "all",
+                },
+            },
+        },
     },
     devtool: 'eval-source-map',
 }
