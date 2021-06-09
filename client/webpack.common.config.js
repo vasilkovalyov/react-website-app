@@ -9,17 +9,28 @@ const ProgressPlugin = require('progress-webpack-plugin');
 
 const BuildFolder = 'dist'
 
+
 module.exports = {
     entry: "./src/index.js",
     output: {
         filename: "[name].[contenthash:8].js",
         path: path.resolve(__dirname, BuildFolder),
+        publicPath: '/',
+    },
+    devServer: {
+        contentBase: path.resolve(__dirname, '/dist'),
+        publicPath: '/',
+        host: 'localhost',
+        port: 8080,
+        hot: true,
+        open: true,
+        watchContentBase: true,
+        historyApiFallback: true,
     },
     module: {
         rules: [{
                 test: /\.(js|jsx)$/,
                 exclude: /node_modules/,
-                // loader: "babel-loader",
                 use: {
                     loader: "babel-loader",
                     options: {
@@ -96,14 +107,6 @@ module.exports = {
         new ErrorOverlayPlugin(),
         new ProgressPlugin(true)
     ],
-    devServer: {
-        contentBase: path.resolve(__dirname, './public'),
-        publicPath: '/',
-        host: 'localhost',
-        port: 8080,
-        open: true,
-        historyApiFallback: true,
-    },
     optimization: {
         runtimeChunk: {
             name: "runtime",
