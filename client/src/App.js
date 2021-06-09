@@ -15,15 +15,13 @@ const App = () => {
     return (
         <div id="wrapper">
             <Router>
-                <div className="app">
-                    <Switch>
-                        <AppRoute exact path="/" component={Home} layout={MainLayout} />
-                        <AppRoute path="/about" component={About} layout={MainLayout} />
-                        <AppRoute path="/portfolio" component={Portfolio} layout={MainLayout} />
-                        <AppRoute path="/blog" component={Blog} layout={MainLayout} />
-                        <AppRoute path="/contact" component={Contact} layout={MainLayout} />
-                    </Switch>
-                </div>
+                <Switch>
+                    <AppRoute exact path="/" component={Home} layout={MainLayout} />
+                    <AppRoute path="/about" component={About} layout={MainLayout} />
+                    <AppRoute path="/portfolio" component={Portfolio} layout={MainLayout} />
+                    <AppRoute path="/blog" component={Blog} layout={MainLayout} />
+                    <AppRoute path="/contact" component={Contact} layout={MainLayout} />
+                </Switch>
             </Router>
         </div>
     )

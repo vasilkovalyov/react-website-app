@@ -3,13 +3,17 @@ import React, { Fragment } from 'react'
 import Header from '../public/Header.jsx'
 import Footer from '../public/Footer.jsx'
 
+import { Layout } from 'antd';
+
+const { Content } = Layout;
+
 const MainLayout = (props) => {
     return (
         <Fragment>
             <Header />
-            <main className="main">
+            <Content className="main">
                 {props.children}
-            </main>
+            </Content>
             <Footer />
         </Fragment>
     )
