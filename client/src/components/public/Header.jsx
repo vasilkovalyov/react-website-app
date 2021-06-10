@@ -1,25 +1,25 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 
-import { Layout, Menu, PageHeader } from 'antd'
+import { Menu } from 'antd'
 import Logo from '../common/Logo.jsx'
 import PropTypes from 'prop-types'
-import { Row, Col } from 'antd';
+import { Row } from 'antd';
 
-const { Header } = Layout;
-
-const HeaderPublic = ({NavLogo, NavList}) => {
+const HeaderPublic = ({HeaderLogo, HeaderNavigation}) => {
     const [navActive, setNavActive] = useState(false)
     return <header className={`header ${navActive ? 'header--active' : ''}`}>
         <div className="container">
         <Row justify="space-between" align="middle">
-            <Link to="/" className="header__logo-link d-inline-block">
-                <Logo ClassName="header__logo" Image={NavLogo} />
-            </Link>
+            {
+                HeaderLogo && <Link to="/" className="header__logo-link d-inline-block">
+                    <Logo ClassName="header__logo" Image={HeaderLogo} />
+                </Link>
+            }
             <nav className="header__navigation">
                 <Menu className="d-flex d-flex--ended d-flex--center header__menu" theme="light">
                     {
-                        NavList && NavList.map((item) => {
+                        HeaderNavigation && HeaderNavigation.map((item) => {
                             return (
                                 <Menu.Item key={item.Key}>
                                     <Link to={item.Path} className="text-uppercase bold">{item.Name}</Link>
