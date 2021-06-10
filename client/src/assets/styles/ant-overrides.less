@@ -1,0 +1,45 @@
+@parent: '.ant-menu';
+
+.ant-menu {
+    &.header__menu {
+        border: none;
+
+        .ant-menu-item {
+            margin-bottom: 0;
+            letter-spacing: 0.08em;
+
+            &-selected {
+                background-color: transparent;
+
+                a {
+                    color: @black;
+
+                    &:before {
+                        content: '';
+                        position: absolute;
+                        top: 7px;
+                        left: -19px;
+                        width: 15px;
+                        height: 2px;
+                        background-color: @gray;
+                    }
+                }
+            }
+
+            &-content {
+                overflow: none;
+            }
+
+            &:active {
+                background-color: transparent;
+            }
+
+            a {
+                position: relative;
+                &:hover {
+                    color: @black;
+                }
+            }
+        }
+    }
+}

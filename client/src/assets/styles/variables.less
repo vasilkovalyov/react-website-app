@@ -1,11 +1,9 @@
 // Breakpoints
-@tablet-landscape: 1279px;
-@tablet: 1023px;
-@tablet-small: 991px;
-@tablet-portrait: 768px;
-@mobile: 767px;
-@small-mobile-landscape: 479px;
-@small-mobile: 320px;
+@widescreen: 1366px;
+@desktop: 1024px;
+@tablet: 768px;
+@phone: 480px;
+@phone-sm: 320px;
 
 
 // colors
@@ -26,20 +24,15 @@
 @heading-font: @base-font;
 @heading-font-weight: 300;
 
-@heading-1-size: 30px;
-@heading-2-size: 30px;
-@heading-3-size: 24px;
-@heading-4-size: 20px;
-@heading-5-size: 18px;
-
 
 // Base
 @base-font: "Roboto", Arial, Helvetica, sans-serif;
 @additional-font: "Lato", Arial, Helvetica, sans-serif;
 
-@container-width: 1150px;
+@container-width: 1180px;
 
 @font-size-base: 14px;
+@animation-speed: 0.3s;
 
 // Background color for `<body>`
 @body-background: @beige;
@@ -85,3 +78,30 @@
 @link-hover-color: @black;
 @link-active-color: @black;
 
+// Menu
+// ---
+@menu-inline-toplevel-item-height: 40px;
+@menu-item-height: 40px;
+@menu-item-vertical-margin: 0;
+@menu-item-color: @gray;
+
+
+@menu-item-group-height: @line-height-base;
+@menu-collapsed-width: 80px;
+@menu-bg: @component-background;
+@menu-popup-bg: @component-background;
+@menu-inline-submenu-bg: @background-color-light;
+@menu-highlight-color: @primary-color;
+@menu-highlight-danger-color: @error-color;
+@menu-item-active-bg: @primary-1;
+@menu-item-active-danger-bg: @red-1;
+@menu-item-active-border-width: 3px;
+@menu-item-group-title-color: @text-color-secondary;
+@menu-item-boundary-margin: 8px;
+@menu-item-padding-horizontal: 20px;
+@menu-item-padding: 0 @menu-item-padding-horizontal;
+@menu-horizontal-line-height: 1.2;
+@menu-icon-margin-right: 10px;
+@menu-icon-size: @menu-item-font-size;
+@menu-icon-size-lg: @font-size-lg;
+@menu-item-group-title-font-size: @menu-item-font-size;

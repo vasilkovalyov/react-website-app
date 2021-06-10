@@ -64,3 +64,18 @@
 	padding: 0;
 	margin: 0;
 }
+
+.breakpoint(@size, @rules, @mediafeature:max-width) {
+	@mediaQuery: ~"screen and (@{mediafeature}: @{size})";
+
+	@media @mediaQuery {
+		@rules();
+	}
+}
+
+.media-set(@prop, @forHighQuery, @forLessQuery, @size) {
+	@{prop}: @forHighQuery;
+	.breakpoint(@size, {
+        @{prop}: @forLessQuery;
+    });
+}
