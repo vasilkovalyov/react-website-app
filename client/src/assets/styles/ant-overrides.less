@@ -1,5 +1,3 @@
-@parent: '.ant-menu';
-
 .ant-menu {
     &.header__menu {
         border: none;
@@ -41,5 +39,21 @@
                 }
             }
         }
+    }
+}
+
+.social-list {
+    .ant-list-items {
+        .flex-justify-center()
+    }
+
+    .ant-list-item {
+        padding: 22px 0;
+        margin: 0 27px;
+
+        .breakpoint(@desktop, {
+            padding: 10px 0;
+            margin: 0 15px;
+        });
     }
 }

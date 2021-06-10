@@ -40,6 +40,37 @@ const logo = {
 	Url: 'https://i.postimg.cc/V6HYX1BZ/logo.png',
 }
 
+
+const FooterModel = {
+    LogoFooter: {
+        Name: 'header logo',
+        Url: 'https://i.postimg.cc/V6HYX1BZ/logo.png',
+    },
+    Social: [
+        {
+            Name: 'facebook',
+            Url: 'https://www.facebook.com/'
+        },
+        {
+            Name: 'google-plus',
+            Url: 'https://www.google.com/'
+        },
+        {
+            Name: 'twitter',
+            Url: 'https://twitter.com/?lang=uk'
+        },
+        {
+            Name: 'linkedin',
+            Url: 'https://www.linkedin.com/'
+        },
+        {
+            Name: 'instagram',
+            Url: 'https://www.instagram.com/'
+        }
+    ],
+    Copyright: '© 2021 Mulitix Theme by ThemeForces. All Rights Reserved.'
+}
+
 const MainLayout = (props) => {
     return (
         <Fragment>
@@ -47,7 +78,7 @@ const MainLayout = (props) => {
             <Content className="main">
                 {props.children}
             </Content>
-            <Footer />
+            <Footer {...FooterModel} />
         </Fragment>
     )
 }
