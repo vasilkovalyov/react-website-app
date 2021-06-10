@@ -30,19 +30,8 @@
 	text-transform: uppercase;
 }
 
-.breakpoint(@size, @rules, @mediafeature:max-width) {
-	@mediaQuery: ~"screen and (@{mediafeature}: @{size})";
-
-	@media @mediaQuery {
-		@rules();
-	}
-}
-
-.media-set(@prop, @forDesktop, @forMobile) {
-	@{prop}: @forDesktop;
-	.breakpoint(@mobile, {
-        @{prop}: @forMobile;
-    });
+.d-inline-block {
+	display: inline-block;
 }
 
 .d-flex {
@@ -57,8 +46,9 @@
 		width: 100%;
 	}
 	&--aligned {
-		justify-content: space-between;
-		align-items: center;
+		&-center {
+			align-items: center;
+		}
 		&-start {
 			align-items: flex-start;
 		}

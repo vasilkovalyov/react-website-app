@@ -1,0 +1,32 @@
+.header {
+    position: relative;
+    padding: 28px 0;
+
+    &--active {
+        .header__navigation {
+            .breakpoint(@desktop, {
+                opacity: 1;
+                visibility: visible;
+            });
+        }
+    }
+
+    &__navigation {
+        .breakpoint(@desktop, {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            opacity: 0;
+            visibility: hidden;
+            background-color: @body-background;
+            transition: opacity 0.3s linear, visibility 0.3s linear;
+        });
+    }
+
+    &__menu {
+        .breakpoint(@desktop, {
+            display: block;
+        });
+    }
+}
