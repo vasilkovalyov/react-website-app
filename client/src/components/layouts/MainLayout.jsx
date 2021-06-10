@@ -49,23 +49,28 @@ const FooterModel = {
     Social: [
         {
             Name: 'facebook',
-            Url: 'https://www.facebook.com/'
+            Url: 'https://www.facebook.com/',
+            Target: '_blank'
         },
         {
             Name: 'google-plus',
-            Url: 'https://www.google.com/'
+            Url: 'https://www.google.com/',
+            Target: '_blank'
         },
         {
             Name: 'twitter',
-            Url: 'https://twitter.com/?lang=uk'
+            Url: 'https://twitter.com/?lang=uk',
+            Target: '_blank'
         },
         {
             Name: 'linkedin',
-            Url: 'https://www.linkedin.com/'
+            Url: 'https://www.linkedin.com/',
+            Target: '_blank'
         },
         {
             Name: 'instagram',
-            Url: 'https://www.instagram.com/'
+            Url: 'https://www.instagram.com/',
+            Target: '_blank'
         }
     ],
     Copyright: '© 2021 Mulitix Theme by ThemeForces. All Rights Reserved.'

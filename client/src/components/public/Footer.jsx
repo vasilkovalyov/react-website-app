@@ -1,8 +1,11 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import Typography from "antd/es/typography"
 import { Link } from 'react-router-dom'
 import Logo from '../common/Logo.jsx'
 import SocialList from '../common/SocialList.jsx'
+
+import linkModel from '../../models/Link.js'
 
 const { Paragraph, Text } = Typography;
 
@@ -20,6 +23,15 @@ const Footer = ({Social, LogoFooter, Copyright}) => {
             </Paragraph>
         </div>
     </footer>
+}
+
+Footer.propTypes = {
+    Social: PropTypes.arrayOf(PropTypes.exact(linkModel)),
+    LogoFooter: PropTypes.shape({
+        Name: PropTypes.string,
+        Url: PropTypes.string,
+    }),
+    Copyright: PropTypes.string
 }
 
 export default Footer
