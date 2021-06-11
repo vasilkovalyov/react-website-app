@@ -57,3 +57,123 @@
         });
     }
 }
+
+.ant-typography {
+    &.image-banner__heading {
+        font-size: 48px;
+        font-weight: 300;
+        color: @white;
+        padding: 0 44px;
+        letter-spacing: 0.1em;
+
+        .breakpoint(@desktop, {
+            font-size: 30px;
+            padding: 0 30px;
+        });
+
+        .breakpoint(@tablet, {
+            font-size: 20px;
+        });
+
+        .breakpoint(@mobile, {
+            font-size: 16px;
+            padding: 0 10px;
+        });
+    }
+}
+
+.ant-carousel {
+    .slick-dots {
+        li {
+            margin-left: 10px;
+            margin-right: 10px;
+            
+            &.slick-active {
+                button {
+                    border: 4px solid @black;
+                }
+            }
+            
+            button {
+                opacity: 1;
+                border-radius: 50%;
+                background-color: @white;
+            }
+        }
+    }
+    
+    .slick-dots-bottom {
+        .media-set(bottom, 56px, 20px, @desktop);
+    }
+
+    .slick-arrow {
+        z-index: 2;
+        width: 44px;
+        height: 44px;
+        border: 1px solid @white;
+        border-radius: 50%;
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+        transition: background-color 0.3s linear;
+
+        .breakpoint(@desktop, {
+            width: 30px;
+            height: 30px;
+        });
+
+        &:hover {
+            border-color: @black;
+            background-color: @black;
+        }
+
+        &:before {
+            font-size: 20px;
+            color: @white;
+        }
+
+        .icon {
+            width: 40px;
+            height: 40px;
+
+            .breakpoint(@desktop, {
+                width: 20px;
+                height: 20px;
+            });
+        }
+    }
+
+    .slick-next {
+        right: 112px;
+
+        .breakpoint(@widescreen, {
+            right: 30px;
+        });
+
+        .breakpoint(@mobile, {
+            right: 5px;
+        });
+
+        &:before {
+            content: "\e90a";
+            font-family: 'icomoon' !important;
+        }
+    }
+    
+    .slick-prev {
+        left: 112px;
+
+        .breakpoint(@widescreen, {
+            left: 30px;
+        });
+
+        .breakpoint(@mobile, {
+            left: 5px;
+        });
+        
+        &:before {
+            content: "\e909";
+            font-family: 'icomoon' !important;
+        }
+    }
+}
