@@ -1,0 +1,15 @@
+.image {
+    img {
+        width: 100%;
+    }
+
+    &--wide,
+	&--square {
+		figure,
+		picture,
+		img {
+			.fill-image-container();
+			object-fit: cover;
+		}
+	}
+}

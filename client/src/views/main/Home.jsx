@@ -1,9 +1,12 @@
 import React, { Fragment } from 'react'
 
+import HeroSectionModel from '../../static/common/hero-section.js'
+import HeroSection from '../../components/public/HeroSection.jsx'
+
 const Home = () => {
     return (
         <Fragment>
-            <h1>Home</h1>
+            <HeroSection Slides={HeroSectionModel} IsPagination={true} IsArrows={true} />
         </Fragment>
     )
 }

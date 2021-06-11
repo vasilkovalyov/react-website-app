@@ -4,7 +4,7 @@ import IcomoonReact from "icomoon-react"
 import iconSet from "../../assets/icons/selection.json"
 
 const Icon = ({size=20, ...props}) => {
-    return <IcomoonReact iconSet={iconSet} size={size} {...props} />
+    return <IcomoonReact className="icon" iconSet={iconSet} size={size} {...props} />
 }
 
 export default Icon
