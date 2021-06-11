@@ -1,5 +1,5 @@
 export default {
-    LogoFooter: {
+    Logo: {
         Name: 'header logo',
         Url: 'https://i.postimg.cc/V6HYX1BZ/logo.png',
     },
