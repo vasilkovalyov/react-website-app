@@ -1,0 +1,25 @@
+.person-card {
+    margin-bottom: 30px;
+
+    .image {
+        height: 35vw;
+        max-height: 442px;
+
+        .breakpoint(@tablet, {
+            height: 65vw;
+        });
+        
+        .breakpoint(@mobile, {
+            height: 350px;
+        });
+    }
+
+    &__subheading {
+        font-size: 16px;
+    }
+
+    &__description {
+        line-height: 1.7;
+        .truncate-text(3)
+    }
+}

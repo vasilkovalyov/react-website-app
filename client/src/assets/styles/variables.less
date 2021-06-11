@@ -1,4 +1,5 @@
 // Breakpoints
+@widescreen-md: 1600px;
 @widescreen: 1366px;
 @desktop: 1024px;
 @tablet: 768px;
@@ -33,6 +34,33 @@
 
 @font-size-base: 14px;
 @animation-speed: 0.3s;
+
+// Media queries breakpoints
+// @screen-xs and @screen-xs-min is not used in Grid
+// smallest break point is @screen-md
+@screen-xs: @mobile-sm;
+@screen-xs-min: @screen-xs;
+// 👆 Extra small screen / phone
+
+// 👇 Small screen / tablet
+@screen-sm: @mobile;
+@screen-sm-min: @screen-sm;
+
+// Medium screen / desktop
+@screen-md: @tablet;
+@screen-md-min: @screen-md;
+
+// Large screen / wide desktop
+@screen-lg: @desktop;
+@screen-lg-min: @screen-lg;
+
+// Extra large screen / full hd
+@screen-xl: @widescreen;
+@screen-xl-min: @screen-xl;
+
+// Extra extra large screen / large desktop
+@screen-xxl: @widescreen-md;
+@screen-xxl-min: @screen-xxl;
 
 // Background color for `<body>`
 @body-background: @beige;
@@ -112,3 +140,28 @@
 @carousel-dot-width: @dot-square;
 @carousel-dot-height: @dot-square;
 @carousel-dot-active-width: @dot-square;
+
+// Card
+// ---
+@card-head-color: @heading-color;
+@card-head-background: transparent;
+@card-head-font-size: @font-size-lg;
+@card-head-font-size-sm: @font-size-base;
+@card-head-padding: 16px;
+@card-head-padding-sm: (@card-head-padding / 2);
+@card-head-height: 48px;
+@card-head-height-sm: 36px;
+@card-inner-head-padding: 12px;
+@card-padding-base: 24px;
+@card-padding-base-sm: (@card-padding-base / 2);
+@card-actions-background: @white;
+@card-background: @white;
+@card-shadow: 0 1px 2px -2px rgba(0, 0, 0, 0.16), 0 3px 6px 0 rgba(0, 0, 0, 0.12), 0 5px 12px 4px rgba(0, 0, 0, 0.09);
+@card-radius: 0;
+@card-head-extra-color: @text-color;
+
+// Typography
+// ---
+@typography-title-font-weight: 300;
+@typography-title-margin-top: 0;
+@typography-title-margin-bottom: 0;
