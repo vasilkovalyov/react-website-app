@@ -2,18 +2,18 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 
 import { Menu } from 'antd'
-import Logo from '../common/Logo.jsx'
+import {default as LogoComponents } from '../common/Logo.jsx'
 import PropTypes from 'prop-types'
 import { Row } from 'antd';
 
-const HeaderPublic = ({HeaderLogo, HeaderNavigation}) => {
+const HeaderPublic = ({Logo, HeaderNavigation}) => {
     const [navActive, setNavActive] = useState(false)
     return <header className={`header ${navActive ? 'header--active' : ''}`}>
         <div className="container">
         <Row justify="space-between" align="middle">
             {
-                HeaderLogo && <Link to="/" className="header__logo-link d-inline-block">
-                    <Logo ClassName="header__logo" Image={HeaderLogo} />
+                Logo && <Link to="/" className="header__logo-link d-inline-block">
+                    <LogoComponents ClassName="header__logo" Image={Logo} />
                 </Link>
             }
             <nav className="header__navigation">
