@@ -1,0 +1,44 @@
+.progress {
+    background-color: @gray-1;
+    padding: 4px;
+
+    &__line {
+        position: relative;
+        background-color: @gray-4;
+        height: 2px;
+        transition: width @animation-speed linear;
+
+        &-point {
+            position: absolute;
+            top: 50%;
+            right: -6px;
+            transform: translateY(-50%);
+            z-index: 1;
+            .circle(12px, @black)
+        }
+    }
+
+    &__count {
+        position: absolute;
+        top: -40px;
+        right: -38px;
+        color: @white;
+        background-color: @black;
+        font-size: 12px;
+        width: 40px;
+        height: 21px;
+        padding: 3px;
+        font-family: @secondary-font;
+
+        &:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -8px;
+            width: 0;
+            height: 0;
+            border-top: 8px solid @black;
+            border-right: 8px solid transparent;
+        }
+    }
+}
